@@ -1,0 +1,14 @@
+.direnv/
+.envrc
+
+*.retry
+*.log
+.ansible/
+
+*secrets.yml
+
+**/*vault.yml
+**/*vault.pass
+
+
+.DS_Store
