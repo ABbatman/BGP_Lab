@@ -1,0 +1,9 @@
+ansible_user: "{{ vault_arista_user | default(lookup('env', 'ARISTA_USERNAME')) }}"
+ansible_password: "{{ vault_arista_pass | default(lookup('env', 'ARISTA_PASSWORD')) }}"
+
+
+ansible_connection: httpapi
+ansible_network_os: arista.eos.eos
+ansible_httpapi_use_ssl: true
+ansible_httpapi_validate_certs: false
+ansible_httpapi_port: 443
