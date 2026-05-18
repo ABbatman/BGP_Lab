@@ -1,0 +1,26 @@
+---
+- name: "Checking Arista eAPI"
+  hosts: arista
+  gather_facts: false
+  tasks:
+    - name: "Gather minimal Arista facts"
+      arista.eos.eos_facts:
+        gather_subset: min
+      register: arista_status
+
+    - name: "The ansible displays OS version"
+      ansible.builtin.debug:
+        msg: "Arista API OK! Version: {{ansible_net_version }}, Model: {{ansible_net_model}}"
+
+- name: "Checking VyOS REST API"
+  hosts: vyos
+  gather_facts: false
+  tasks:
+    - name: "Gather minimal VyOS facts"
+      vyos.vyos.vyos_facts:
+        gather_subset: min
+      register: vyos_status
+
+    - name: "The ansible displays OS version"
+      ansible.builtin.debug:
+        msg: "VyOS API OK! Version: {{ansible_net_version }}"
