@@ -1,5 +1,4 @@
-ansible_user: "{{ vault_vyos_user | default(lookup('env', 'VYOS_USERNAME')) }}"
-ansible_password: "{{ vault_vyos_pass | default(lookup('env', 'VYOS_PASSWORD')) }}"
+ansible_httpapi_session_key: "{{ vault_vyos_api_key | default(lookup('env', 'VYOS_API_KEY')) }}"
 
 ansible_connection: httpapi
 ansible_network_os: vyos.vyos.vyos

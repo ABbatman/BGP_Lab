@@ -1,0 +1,32 @@
+name: Ansible Lab Runner
+
+on:
+  workflow_dispatch:
+    inputs:
+      playbook:
+        description: 'playbook file name'
+        required: true
+        default: 'site.yml'
+      inventory_file:
+        description: 'inventory file'
+        required: true
+        default: 'hosts.yml'
+
+jobs:
+  run-ansible:
+    runs-on: self-hosted
+
+    env:
+      VYOS_API_KEY: ${{ secrets.VYOS_API_KEY }}
+
+      ARISTA_USERNAME: ${{ secrets.ARISTA_USERNAME }}
+      ARISTA_PASSWORD: ${{ secrets.ARISTA_PASSWORD }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Ansible
+        run: |
+
+          ansible-playbook -i inventory/${{ github.event.inputs.inventory_file }} ${{ github.event.inputs.playbook }}
