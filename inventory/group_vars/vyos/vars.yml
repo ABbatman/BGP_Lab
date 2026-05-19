@@ -3,6 +3,4 @@ ansible_password: "{{ vault_vyos_pass | default(lookup('env', 'VYOS_PASSWORD')) 
 
 ansible_connection: network_cli
 ansible_network_os: vyos.vyos.vyos
-ansible_httpapi_use_ssl: true
-ansible_httpapi_validate_certs: false
 ansible_httpapi_port: 22
