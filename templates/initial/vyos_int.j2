@@ -1,0 +1,16 @@
+{% for intf in interface | default([]) %}
+{% if intf.name.lower().startswith('eth') %}
+  {% intf.type= 'ethernet' %}
+{% elif intf.name.lower().startswith('dum') %}
+  {% intf.type= 'dummy' %}
+{% endif %}
+
+{% if intf.ipv4 is defined and intf.ipv4 %}
+  set interfaces {{ intf.type }} {{ intf.name }} address '{{ intf.ipv4 }}'
+{% endif %}
+
+{% if intf.ipv6 is defined and intf.ipv6 %}
+  set interfaces {{ intf.type }} {{ intf.name }} address '{{ intf.ipv6 }}'
+{% endif %}
+
+{% endfor %}

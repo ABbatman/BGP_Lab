@@ -1,0 +1,20 @@
+---
+- name: Configuring Arista interfaces
+  hosts: arista
+  gather_facts: false
+
+  tasks:
+    - name: Apply Arista topology configuration
+      arista.eos.eos_config:
+        src: "../../templates/initial/arista_int.j2"
+        save_when: modified
+
+- name: Configuring VyOS interfaces
+  hosts: vyos
+  gather_facts: false
+
+  tasks:
+    - name: Apply VyOS topology configuration
+      vyos.vyos.vyos_config:
+        src: "../../templates/initial/vyos_int.j2
+        save_when: modified

@@ -1,0 +1,11 @@
+---
+interfaces:
+  - name: eth7
+    ipv4: 192.168.23.3/24
+  - name: eth11
+    ipv4: 192.168.13.3/24
+  - name: eth8
+    ipv4: 192.168.35.3/24
+
+  - name: dum0
+    ipv4: 3.3.3.3/32

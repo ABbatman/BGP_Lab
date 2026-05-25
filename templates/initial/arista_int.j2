@@ -1,0 +1,20 @@
+ip routing
+ipv6 unicast-routing  
+
+{% for int in interfaces | default([]) %}
+
+interface {{ int.name | capitalize }}
+{% if 'ethernet' in int.name.lower() %}
+  no switchport
+{$ endif %}
+  no shutdown
+  
+{% if int.ipv6 is defined and int.ipv6 %}
+  ipv6 address {{ int.ipv6 }}
+{% endif%}
+
+{% if int.ipv4 is defined and int.ipv4 %}
+  ip address {{ int.ipv4 }}
+{% endif %}  
+!
+{% endfor %}

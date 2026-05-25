@@ -1,0 +1,9 @@
+---
+interfaces:
+  - name: eth9
+    ipv4: 192.168.57.7/24
+  - name: eth6
+    ipv4: 192.168.67.7/24
+
+  - name: dum0
+    ipv4: 7.7.7.7/32

@@ -1,0 +1,9 @@
+---
+interfaces:
+  - name: Ethernet1
+    ipv4: 192.168.67.6/24
+  - name: Ethernet2
+    ipv4: 192.168.46.6/24
+
+  - name: loopback0
+    ipv4: 6.6.6.6/32
