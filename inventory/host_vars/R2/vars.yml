@@ -7,5 +7,5 @@ interfaces:
   - name: Ethernet3
     ipv4: 192.168.24.2/24
 
-  - name: loopback
+  - name: loopback0
     ipv4: 2.2.2.2/32
