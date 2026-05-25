@@ -8,11 +8,11 @@
 {% endif %}
 
 {% if intf.ipv4 is defined and intf.ipv4 %}
-  set interfaces {{ intf_type }} {{ intf.name }} address '{{ intf.ipv4 }}'
+  interfaces {{ intf_type }} {{ intf.name }} address '{{ intf.ipv4 }}'
 {% endif %}
 
 {% if intf.ipv6 is defined and intf.ipv6 %}
-  set interfaces {{ intf_type }} {{ intf.name }} address '{{ intf.ipv6 }}'
+  interfaces {{ intf_type }} {{ intf.name }} address '{{ intf.ipv6 }}'
 {% endif %}
 
 {% endfor %}
