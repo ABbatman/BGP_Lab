@@ -6,7 +6,7 @@ ipv6 unicast-routing
 interface {{ int.name | capitalize }}
 {% if 'ethernet' in int.name.lower() %}
   no switchport
-{$ endif %}
+{% endif %}
   no shutdown
   
 {% if int.ipv6 is defined and int.ipv6 %}
