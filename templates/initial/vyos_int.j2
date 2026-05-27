@@ -15,7 +15,7 @@ set system hostname {{ inventory_hostname }}
 {% endif %}
 
 {% if intf.ipv6 is defined and intf.ipv6 %}
-  interfaces {{ intf_type }} {{ intf.name }} address '{{ intf.ipv6 }}'
+  set interfaces {{ intf_type }} {{ intf.name }} address '{{ intf.ipv6 }}'
 {% endif %}
 
 {% endfor %}
