@@ -1,4 +1,4 @@
-system hostname {{ inventory_hostname }}
+set system hostname {{ inventory_hostname }}
 {{ '\n' }}
 
 {% for intf in interfaces | default([]) %}
