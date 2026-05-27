@@ -1,5 +1,7 @@
 ip routing
 ipv6 unicast-routing  
+hostname {{ inventory_hostname }}
+!
 
 {% for int in interfaces | default([]) %}
 

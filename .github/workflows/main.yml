@@ -30,6 +30,12 @@ jobs:
           clean: true
           fetch-depth: 0
 
+      - name: Absolute Force Sync
+        run: |
+          git config --local --add safe.directoty '*'
+          git fetch origin main
+          git reset --hard origin/main
+
       - name: Run Ansible
         run: |
 
