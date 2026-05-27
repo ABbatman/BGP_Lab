@@ -1,4 +1,5 @@
 system hostname {{ inventory_hostname }}
+{{ '\n' }}
 
 {% for intf in interfaces | default([]) %}
 {% if intf.name.lower().startswith('eth') %}
