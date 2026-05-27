@@ -1,4 +1,4 @@
-set system hostname {{ inventory_hostname }}
+set system host-name {{ inventory_hostname }}
 {% for intf in interfaces | default([]) -%}
 {% if intf.name.lower().startswith('eth') -%}
 {% set intf_type = 'ethernet' -%}
